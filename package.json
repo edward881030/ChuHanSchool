@@ -1,0 +1,16 @@
+{
+  "name": "chinese-chess",
+  "version": "1.0.0",
+  "description": "chinese chess education",
+  "main": "index.html",
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "author": "huangwenqing",
+  "license": "MIT",
+  "dependencies": {
+    "app-module-path": "^2.2.0",
+    "restify": "^5.0.1",
+    "bower": "^1.7.7"
+  }
+}

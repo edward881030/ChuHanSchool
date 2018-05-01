@@ -1,0 +1,38 @@
+.header-wrapper {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    top: 0em;
+    opacity: 1;
+    background-color:white;
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+
+.header-wrapper .title{
+    color:red;
+    font-size: 2em;
+    font-family: KaiTi;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    float: left;
+}
+
+.header-wrapper .nav_bar {
+    text-align: center;
+    padding-top: 0.5em;
+}
+
+.header-wrapper a {
+    text-decoration: none;
+    color:black;
+    font: normal 100% Helvetica, Arial, sans-serif;
+    margin-left: 4%;
+}
+
+.clear {
+    clear: both;
+}
+
+
+
