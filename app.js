@@ -7,6 +7,6 @@ require('app-module-path').addPath(__dirname);
 var server = require('app/restifyServer').server;
 
 
-server.listen(80, function () {
+server.listen(8080, function () {
     console.log('server running...');
 });

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" ng-app="chineseChess">
 
 <head>
     <meta charset="utf-8">
@@ -17,6 +17,7 @@
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
 <body>
@@ -71,21 +72,101 @@
     <!-- common-header  -->
     <!-- index-main -->
     <div class="talents-main clearfix">
-      	<div class="talents-one wrap">
-      		<h3>
-      			<img src="images/talents_title.jpg" alt="">
-      		</h3>
-      		<div class="talents-cont">
-      			<img src="images/talents_case_img.jpg" alt="">
-      		</div>
-      	</div>
-      	<!--<div class="talents-two clearfix">-->
-      		<!--<div class="talents-two-cont wrap">-->
-      			<!--<h3><img src="images/talents_rod_title.jpg" alt=""></h3>-->
-      			<!--<p>专业、管理双通道发展体系：在科捷，你将有机会深入学习专业技能，协同参与项目管理。是变身业务专家，还是升级管理大咖，你的道路由你选择！</p>-->
-      			<!--<div class="talets-two-bg"></div>-->
-      		<!--</div>-->
-      	<!--</div>-->
+		<div id="talents" class="talents-one wrap">
+			<div style="text-align: center">
+				<h3>
+				<img src="images/talents_title.jpg" alt="">
+				</h3>
+			</div>
+			<div id = "banner_title" style="position:relative;">
+				<div id = "jianli1" class="jianli" style="position: absolute">
+					<div style="float: left; margin-left: 90px;">
+						<img style="width: 300px; height: 400px;" src="images/hdq.png"/>
+					</div>
+					<div style="padding-left: 440px;">
+						<p>
+							<img src="/images/wjx.png" style="margin-right:5px; vertical-align:text-bottom;height:20px; width:20px; " />姓&nbsp;&nbsp;名：黄丹青
+                        </p>
+                        <p>
+							<img src="/images/wjx.png" style="margin-right:5px; vertical-align:text-bottom;height:20px; width:20px; " />经&nbsp;&nbsp;验：7年
+                        </p>
+						<p> <img src="/images/wjx.png" style="margin-right:5px; vertical-align:text-bottom;height:20px; width:20px; " />荣&nbsp;&nbsp;誉：</p>
+						<p style="padding-left: 50px;">2007年获得全国‘’乌金杯‘’亚军</p>
+						<p style="padding-left: 50px;">2009年获得河南省象棋等级赛冠军</p>
+						<p style="padding-left: 50px;">2010年获得全国24市象棋公开赛冠军</p>
+                        </p>
+						<p><img src="/images/wjx.png" style="margin-right:5px; vertical-align:text-bottom;height:20px; width:20px; " />简历:</p>
+						<p style="padding-left: 50px; line-height:30px;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄丹青，1985年。十余岁学习中国象棋,在全国象棋大赛上，都取得过骄人战绩。
+							近年从事象棋教育工作，学生任思成，8岁成为“河南省少年赛”冠军；张婉玉10岁获得“河南省象棋锦标赛”成人组女子冠军。黄老师教学方法与教学
+							理念得到广大学生及家长的认可,并于2016年创办"楚汉学堂"。
+                        </p>
+					</div>
+				</div>
+				<div id = "jianli2" class="jianli"style="position: absolute; display: none;">
+					<div style="float: left; margin-left: 90px;">
+						<img style="width: 300px; height: 400px;" src="images/ldy.png"/>
+					</div>
+					<div style="padding-left: 440px;">
+						<p>
+							<img src="/images/wjx.png" style="margin-right:5px; vertical-align:text-bottom;height:20px; width:20px; " />姓&nbsp;&nbsp;名：蔺道远
+						</p>
+						<p>
+							<img src="/images/wjx.png" style="margin-right:5px; vertical-align:text-bottom;height:20px; width:20px; " />经&nbsp;&nbsp;验：3年
+						</p>
+						<p> <img src="/images/wjx.png" style="margin-right:5px; vertical-align:text-bottom;height:20px; width:20px; " />荣&nbsp;&nbsp;誉：</p>
+						<p style="padding-left: 50px;">2013年西亚斯杯河南省高校象棋联赛冠军</p>
+						<p style="padding-left: 50px;">2015年获得长垣县象棋大赛冠军</p>
+						<p style="padding-left: 50px;">2017年获得河南省舞钢市象棋公开赛冠军</p>
+						</p>
+						<p><img src="/images/wjx.png" style="margin-right:5px; vertical-align:text-bottom;height:20px; width:20px; " />简历:</p>
+						<p style="padding-left: 50px; line-height:30px;">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;蔺道远，1992年，大学本科学历，中国象棋一级运动员。蔺老师少年求学时期便热爱象棋，在名师的指点下终
+							学有所成，并在各大赛事中屡获佳绩。蔺老师具有三年的教学经验，擅长寓教于乐，因材施教。 其教学水平和讲课方式有口皆碑，得到了学生和家长的一致认可。2018年，在黄丹青老师的邀请下正式加入楚汉学堂。
+						</p>
+					</div>
+				</div>
+				<div id = "jianli3" class="jianli" style="position: absolute; display: none;">
+					<div style="float: left; margin-left: 90px;">
+						<img style="width: 300px; height: 400px;" src="images/hdq.png"/>
+					</div>
+					<div style="padding-left: 440px;">
+						<p>
+							<img src="/images/wjx.png" style="margin-right:5px; vertical-align:text-bottom;height:20px; width:20px; " />姓&nbsp;&nbsp;名：黄丹青
+						</p>
+						<p>
+							<img src="/images/wjx.png" style="margin-right:5px; vertical-align:text-bottom;height:20px; width:20px; " />经&nbsp;&nbsp;验：7年
+						</p>
+						<p> <img src="/images/wjx.png" style="margin-right:5px; vertical-align:text-bottom;height:20px; width:20px; " />荣&nbsp;&nbsp;誉：</p>
+						<p style="padding-left: 50px;">2007年获得全国‘’乌金杯‘’亚军</p>
+						<p style="padding-left: 50px;">2009年获得河南省象棋等级赛冠军</p>
+						<p style="padding-left: 50px;">2010年获得全国24市象棋公开赛冠军</p>
+						</p>
+						<p><img src="/images/wjx.png" style="margin-right:5px; vertical-align:text-bottom;height:20px; width:20px; " />简历:</p>
+						<p style="padding-left: 50px; line-height:30px;">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄丹青，1985年。十余岁学习中国象棋,在全国象棋大赛上，都取得过骄人战绩。
+							近年从事象棋教育工作，学生任思成，8岁成为“河南省少年赛”冠军；张婉玉10岁获得“河南省象棋锦标赛”成人组女子冠军。黄老师教学方法与教学
+							理念得到广大学生及家长的认可,并于2016年创办"楚汉学堂"。
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id="focus_title">
+				<a data-index="0" href="#" class="on">
+					<span class="bg-b"></span>
+					<span class="inner"></span>
+				</a>
+				<a data-index="1" href="#">
+					<span class="bg-b"></span>
+					<span class="inner"></span>
+				</a>
+				<a data-index="2" href="#">
+					<span class="bg-b"></span>
+					<span class="inner"></span>
+				</a>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
       	<div class="talents-three clearfix">
       		<div class="talents-three-title">
       			<img src="images/talents_three_title.jpg" alt="">
@@ -124,57 +205,7 @@
 					</div>
       		</div>
       	</div>
-
-      	<!--<div class="talents-four clearfix">-->
-      		<!--<div class="talents-four-bg wrap">-->
-      			<!--<img src="images/talents_four_bg.jpg" alt="">-->
-      		<!--</div>-->
-      	<!--</div>-->
-      	<!--<div class="talents-five clearfix">-->
-      		<!--<div class="talents-five-title">-->
-      			<!--<img src="images/talents_five_title.jpg" alt="">-->
-      		<!--</div>-->
-      		<!--<div class="talents-five-ul clearfix">-->
-      				<!--<div class="picScroll-top">-->
-						<!--<div class="hd">-->
-							<!--<a class="next"></a>-->
-							<!---->
-							<!--<a class="prev"></a>-->
-							<!---->
-						<!--</div>-->
-						<!--<div class="bd">-->
-							<!--<ul class="picList">-->
-								<!--<li>-->
-									<!--<div class="pic"><a href="#" target="_blank"><img src="images/talents_list_img_02.jpg" /></a></div>-->
-									<!--<div class="title"><a href="#" target="_blank">员工日活动</a></div>-->
-								<!--</li>-->
-								<!--<li>-->
-									<!--<div class="pic"><a href="#" target="_blank"><img src="images/talents_list_img_02.jpg" /></a></div>-->
-									<!--<div class="title"><a href="#" target="_blank">员工日活动</a></div>-->
-								<!--</li>-->
-								<!--<li>-->
-									<!--<div class="pic"><a href="#" target="_blank"><img src="images/talents_list_img_02.jpg" /></a></div>-->
-									<!--<div class="title"><a href="#" target="_blank">员工日活动</a></div>-->
-								<!--</li>-->
-								<!--<li>-->
-									<!--<div class="pic"><a href="#" target="_blank"><img src="images/talents_list_img_02.jpg" /></a></div>-->
-									<!--<div class="title"><a href="#" target="_blank">员工日活动</a></div>-->
-								<!--</li>-->
-								<!--<li>-->
-									<!--<div class="pic"><a href="#" target="_blank"><img src="images/talents_list_img_02.jpg" /></a></div>-->
-									<!--<div class="title"><a href="#" target="_blank">员工日活动</a></div>-->
-								<!--</li>-->
-								<!--<li>-->
-									<!--<div class="pic"><a href="#" target="_blank"><img src="images/talents_list_img_02.jpg" /></a></div>-->
-									<!--<div class="title"><a href="#" target="_blank">员工日活动</a></div>-->
-								<!--</li>-->
-								<!---->
-							<!--</ul>-->
-						<!--</div>-->
-					<!--</div>-->
-      		<!--</div>-->
-      	<!--</div>-->
-    <!--</div>-->
+	</div>
      <!-- index-main -->
 
 	<div class="common-footer clearfix">
@@ -204,6 +235,7 @@
     <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+	<script src="js/carousel.js"></script>
     <script>
     	jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:4,trigger:"click"});
     	jQuery(".picScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:4,trigger:"click"});

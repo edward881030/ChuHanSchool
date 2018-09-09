@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!-- saved from url=(0096)http://10.46.63.64:8888/jobplatform/pro_data?data_name=misdata:duer_us_invoke_user_installed_bot -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>JobPlatform</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--Bootstrap-->
+    <link href="./JobPlatform_files/bootstrap.min.css" rel="stylesheet">
+    <!--[ifltIE9]>
+ <![endif]-->
+</head>
+<body style="margin-left:100px;max-width: 1200px">
+    <h1>Hello，JobPlatform！</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <label for="data_name" class="col-sm-2control-label">
+                    词典名
+                </label>
+                <input type="text" class="form-control" id="data_name">
+            </div>
+            <div>
+                <label for="start_time" class="col-sm-2control-label">
+                    配送时间段：
+                </label>
+                <input type="datetime-local" name="start_time" class="form-control" id="start_time">
+            </div>
+            <div>
+                <label for="end_time" class="col-sm-2control-label">
+                    至
+                </label>
+                <input type="datetime-local" name="end_time" class="form-control" id="end_time">
+            </div>
+            <div>
+                <label for="total_num" class="col-sm-2control-label">
+                    结果数：
+                </label>
+                <input type="text" name="total_num" class="form-control" id="total_num" value="10">
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" id="search">
+                    Search
+                </button>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <h3>配送信息</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                id
+                            </th>
+                            <th>
+                                词典名
+                            </th>
+                            <th>
+                                timestamp
+                            </th>
+                            <th>
+                                配送时间
+                            </th>
+                            <th>
+                                完成时间
+                            </th>
+                            <th>
+                                module
+                            </th>
+                            <th>
+                                idc
+                            </th>
+                            <th>
+                                state
+                            </th>
+                            <th>
+                                detail
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="data_transfer_table" style="max-width: 600px"><tr><td>0</td><td>misdata:duer_us_invoke_user_installed_bot</td><td>20180807141901</td><td>20180807141909</td><td>0</td><td>sofacloud</td><td>all</td><td>doing</td><td><a href="javascript:init_data_detail_info(&#39;1533622749_0&#39;)">detail</a></td></tr><tr><td>1</td><td>misdata:duer_us_invoke_user_installed_bot</td><td>20180803190620</td><td>20180803190632</td><td>20180803213119</td><td>sofacloud</td><td>all</td><td>success</td><td><a href="javascript:init_data_detail_info(&#39;1533294392_0&#39;)">detail</a></td></tr></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-14">
+            <div class="form-group">
+                <h3>详细信息</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                stage
+                            </th>
+                            <th>
+                                id
+                            </th>
+                            <th>
+                                词典名
+                            </th>
+                            <th>
+                                配送时间
+                            </th>
+                            <th>
+                                结束时间
+                            </th>
+                            <th>
+                                机房
+                            </th>
+                            <th>
+                                app_id
+                            </th>
+                            <th>
+                                tag_id
+                            </th>
+                            <th>
+                                total_ins
+                            </th>
+                            <th>
+                                succ_ins
+                            </th>
+                            <th>
+                                fail_ins
+                            </th>
+                            <th>
+                                state
+                            </th>
+                            <th>
+                                detail
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="transfer_detail_table" style="max-width: 600px"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--jQuery(necessaryforBootstrap'sJavaScriptplugins)-->
+    <!--Includeallcompiledplugins(below),orincludeindividualfilesasneeded-->
+    <script src="./JobPlatform_files/jquery-1.12.4.min.js"></script>
+    <script src="./JobPlatform_files/bootstrap.min.js"></script>
+
+
+<script>
+/* eslint-disable fecs-camelcase */
+var url = 'http://jobplatform.baidu-int.com/';
+var dict = 'misdata:duer_us_invoke_user_installed_bot';
+$(document).ready(function () {
+    $.ajaxSettings.async = false;
+    $('#search').click(function () {
+        init_data_transfer();
+    });
+    if (dict !== '') {
+        $('#data_name').val(dict);
+    }
+
+    $('#search').trigger('click');
+
+});
+function init_data_transfer() {
+
+    var args = {
+        data_name: $('#data_name').val(),
+        start_time: $('#start_time').val(),
+        end_time: $('#end_time').val(),
+        total_num: $('#total_num').val()
+    };
+    $.getJSON(url + 'get_dict_transfer_info', args, function (data) {
+        var obj = data;
+        $('#data_transfer_table').html('');
+        $.each(obj.data, function (i, item) {
+            if (item.current_state == 'post_check_fail' || item.current_state == 'pre_check_fail') {
+                var tr = '<tr><td>' + i + '</td><td>' + item.data_name + '</td><td>' + item.data_timestamp + '</td>'
+                    + '<td>' + item.create_time + '</td><td>' + item.finish_time + '</td><td>' + item.module + '</td><td>'
+                    + item.cluster + '</td><td><a href="javascript:get_result_url(\'' + item.current_state + '\', \''
+                    + item.task_id + '\')">' + item.current_state + '</a></td>';
+            }
+            else {
+                var tr = '<tr><td>' + i + '</td><td>' + item.data_name + '</td><td>' + item.data_timestamp + '</td>'
+                    + '<td>' + item.create_time + '</td><td>' + item.finish_time + '</td><td>' + item.module + '</td><td>'
+                    + item.cluster + '</td><td>' + item.current_state + "</td>";
+            }
+            tr += '<td><a href="javascript:init_data_detail_info(\'' + item.task_id + '\')">detail</a></td></tr>';
+            $('#data_transfer_table').append(tr);
+        });
+    });
+}
+
+function init_data_detail_info(job_id_arg) {
+    var path = 'get_dict_transfer_detail_info';
+    $('#transfer_detail_table').html('');
+    $.getJSON(url + path, {
+        job_id: job_id_arg
+    }, function (data) {
+        var obj = data;
+        $('#transfer_detail_table').html('');
+        var stage = -1;
+        $.each(obj.data, function (i, item) {
+            var bje_url = '<a href="' + item.monitor + '" target=\'_blank\'>detail</a>';
+            if (item.stage !== stage) {
+                stage = item.stage;
+                var tmp_stage = stage;
+            }
+            else {
+                tmp_stage = '';
+            }
+            var tr = '<tr><td>' + tmp_stage + '</td><td>' + i + '</td><td>' + item.data_name + '</td><td>'
+                + item.register_time + '</td><td>' + item.finish_time + '</td>' + '<td>' + item.cluster + '</td><td>'
+                + item.app_id + '</td><td>' + item.tag_id + '</td><td>' + item.ins_num_all + '</td><td>'
+                + item.ins_num_succ + '</td><td>' + item.ins_num_error + '</td><td>' + item.state + '</td><td>'
+                + bje_url + '</td>';
+            tr += '</tr>';
+            $('#transfer_detail_table').append(tr);
+        });
+    });
+}
+
+function get_result_url(current_state, job_id_arg) {
+    var path = 'get_checker_fail_url';
+    $.getJSON(url + path, {state: current_state, job_id: job_id_arg}, function (data) {
+        window.open(data.message);
+    });
+}
+
+</script>
+</body></html>

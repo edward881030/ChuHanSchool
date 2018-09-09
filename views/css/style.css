@@ -549,7 +549,6 @@
 .talents-main .talents-one {
   overflow: hidden;
   zoom: 1;
-  text-align: center;
   padding-bottom: 30px;
 }
 .talents-main .talents-one h3 {
@@ -965,3 +964,16 @@
 .main-im .im_main .im-tel .tel-num { font-family: SimSun; font-weight: bold; color: #e66d15;}
 .main-im .im_main .im-tel:hover { background: #fafafa; }
 /* apple-main */
+
+
+
+#talents #focus_title{margin-top:380px; margin-left:600px; text-align: center;}
+#talents #focus_title a{text-decoration: none;z-index:3;width:24px;height:34px;position:relative;display: inline-block;*display:inline;overflow: hidden;margin:0px 3px;zoom:1;}
+#talents #focus_title a .bg-b{background-image:url(../images/i_dot/i_dot.png);position:absolute;display: block;left:0px;top:0px;cursor:pointer; width: 18px; height: 18px;}
+#talents #focus_title a .inner{background-image:url(../images/i_dot/i_dot_hover.png);position:absolute;left:0px;top:0px;z-index:9;opacity:0;display: none\0;+display: none;*display: none; width: 18px;height: 18px;}
+#talents #focus_title a.on .inner,.talents.focus a:hover .inner{cursor:pointer;display:block;border:0;-webkit-transition:opacity .3s ease-in-out;-ms-transition:opacity .3s ease-in-out;transition:opacity .3s ease-in-out;opacity:1;}
+#talents #focus_title .hover .inner{display:block;}
+
+.jianli p {padding-top:10px; font-size: 18px; font-family: Serif;}
+
+
